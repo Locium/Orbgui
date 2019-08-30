@@ -13,6 +13,9 @@ import { GroupviewComponent } from './components/groupview/groupview.component';
 import { ClientviewComponent } from './components/clientview/clientview.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { ChartsModule } from "ng2-charts";
+import { AssetAllocationChartComponent } from './components/asset-allocation-chart/asset-allocation-chart.component';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +27,16 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
     GroupviewComponent,
     ClientviewComponent,
     TodosComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    AssetAllocationChartComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    RoutingModule
+    RoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
