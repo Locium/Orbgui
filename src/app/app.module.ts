@@ -15,6 +15,7 @@ import { TodosComponent } from './components/todos/todos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { ChartsModule } from "ng2-charts";
 import { AssetAllocationChartComponent } from './components/asset-allocation-chart/asset-allocation-chart.component';
+import { AssetAllocationBubbleChartComponent } from './components/asset-allocation-bubble-chart/asset-allocation-bubble-chart.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AssetAllocationChartComponent } from './components/asset-allocation-cha
     ClientviewComponent,
     TodosComponent,
     TodoItemComponent,
-    AssetAllocationChartComponent
+    AssetAllocationChartComponent,
+    AssetAllocationBubbleChartComponent
   ],
   imports: [
     BrowserModule,
