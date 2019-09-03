@@ -13,28 +13,29 @@ import { GroupviewComponent } from './components/groupview/groupview.component';
 import { ClientviewComponent } from './components/clientview/clientview.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
-import { ChartsModule } from "ng2-charts";
+import { ChartsModule } from 'ng2-charts';
 import { AssetAllocationChartComponent } from './components/asset-allocation-chart/asset-allocation-chart.component';
 import { AssetAllocationBubbleChartComponent } from './components/asset-allocation-bubble-chart/asset-allocation-bubble-chart.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Import angular-fusioncharts
-import { FusionChartsModule } from "angular-fusioncharts";
+import { FusionChartsModule } from 'angular-fusioncharts';
 
 // Import FusionCharts library and chart modules
-import * as FusionCharts from "fusioncharts";
-import * as FusionMaps from "fusioncharts/fusioncharts.maps";
-import * as World from "fusionmaps/maps/fusioncharts.world";
+import * as FusionCharts from 'fusioncharts';
+import * as FusionMaps from 'fusioncharts/fusioncharts.maps';
+// import * as World from 'fusionmaps/maps/fusioncharts.world';
 
-import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 // Pass the fusioncharts library and chart modules
 FusionChartsModule.fcRoot(
   FusionCharts,
   FusionMaps,
-  World,
+  // World,
   FusionTheme
 );
 
@@ -62,7 +63,8 @@ FusionChartsModule.fcRoot(
     ChartsModule,
     FormsModule,
     HttpClientModule,
-    FusionChartsModule
+    FusionChartsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

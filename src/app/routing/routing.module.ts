@@ -8,6 +8,7 @@ import { TodosComponent} from '../components/todos/todos.component';
 const routes: Routes = [
   { path: 'groupview', component: GroupviewComponent},
   { path: 'clientview', component: ClientviewComponent},
+  { path: 'clientview/:id', component: ClientviewComponent},
   { path: 'todos', component: TodosComponent},
   { path: '', redirectTo: '/groupview', pathMatch: 'full'}
 ];
