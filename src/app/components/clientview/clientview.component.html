@@ -1,11 +1,11 @@
 <section fxLayout="column" fxFlexAlign="stretch">
   <div fxFlexAlign="center">
-    <p>Welcome to the Client View</p>
+    <p>Overview of {{bp.name}}</p>
   </div>
   <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
     <mat-tab label="Overview">
-      <p>We {{bp}} are going to use different material components to create nice looking angular app.</p>
-      <p>{{bp}}</p>
+      <p>We are going to use different material components to create nice looking angular app.</p>
+
       <mat-grid-list cols = "2" rowHeight="fit" style="height: 350px">
         <mat-grid-tile>
           <mat-card fxLayoutWrap="wrap" fxLayout="column" fxFlex="95%" fxLayoutGap="16px">

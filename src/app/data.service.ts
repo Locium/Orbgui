@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl:string = "http://localhost:8080/com.orbium/waw115/bp/";
+  baseUrl:string = "http://localhost:8080/com.orbium/waw115/bp";
 
   constructor(private httpClient : HttpClient) {}
 
