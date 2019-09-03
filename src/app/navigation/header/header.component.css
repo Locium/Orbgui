@@ -13,6 +13,10 @@ a:hover, a:active{
   margin: 0;
 }
 
+.submenu{
+  color: black;
+}
+
 mat-toolbar{
   border-radius: 3px;
 }
