@@ -13,10 +13,13 @@
         <a routerLink="/groupview">Group View</a>
       </li>
       <li>
-        <a routerLink="/clientview">Client View</a>
-      </li>
-      <li>
-        <a routerLink="/todos">Todos</a>
+
+        <mat-menu #appMenu="matMenu">
+          <div *ngFor="let bp of bps">
+            <a class="submenu" mat-menu-item>{{ bp.name }}</a>
+          </div>
+        </mat-menu>
+          <a routerLink="" [matMenuTriggerFor]="appMenu">Client View</a>
       </li>
     </ul>
   </div>
