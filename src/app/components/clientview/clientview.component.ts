@@ -1,27 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../data.service";
+import {DataService} from '../../data.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-clientview',
   templateUrl: './clientview.component.html',
   styleUrls: ['./clientview.component.css']
 })
-export class ClientviewComponent {
-  public bp  = [];
 
+export class ClientviewComponent implements OnInit {
+  public bp  = [];
+  public bpId;
 
   // private productsObservable : Observable<any[]> ;
 
-  constructor(private dataService: DataService){
-
+  constructor(private dataService: DataService, private router: ActivatedRoute) {
     // this.productsObservable = this.dataService.get_products();
 
-    this.dataService.get_lum().subscribe((res : any[])=>{
+  this.dataService.get_lum().subscribe((res: any[]) => {
 
       this.bp = res;
       console.log(res);
     });
   }
+  ngOnInit() {
+  // tslint:disable-next-line:radix
+  const id = parseInt(this.router.snapshot.paramMap.get('id'));
+  this.bpId = id;
+}
+
+
 
   public executeSelectedChange = (event) => {
     console.log(event);

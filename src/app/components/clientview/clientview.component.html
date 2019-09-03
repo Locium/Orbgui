@@ -4,7 +4,7 @@
   </div>
   <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
     <mat-tab label="Overview">
-      <p>We {{bp}} are going to use different material components to create nice looking angular app.</p>
+      <p>We {{bp}} are going to use different material components to create nice looking angular app. {{ bpId }}</p>
       <p>{{bp}}</p>
       <mat-grid-list cols = "2" rowHeight="fit" style="height: 350px">
         <mat-grid-tile>
