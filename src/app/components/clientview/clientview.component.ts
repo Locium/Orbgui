@@ -17,19 +17,18 @@ export class ClientviewComponent implements OnInit {
   constructor(private dataService: DataService, private router: ActivatedRoute) {
     // this.productsObservable = this.dataService.get_products();
 
-  this.dataService.get_lum().subscribe((res: any[]) => {
 
-      this.bp = res;
-      console.log(res);
-    });
   }
   ngOnInit() {
   // tslint:disable-next-line:radix
   const id = parseInt(this.router.snapshot.paramMap.get('id'));
   this.bpId = id;
+  this.dataService.get_lum(this.bpId).subscribe((res: any[]) => {
+
+      this.bp = res;
+      console.log(res);
+    });
 }
-
-
 
   public executeSelectedChange = (event) => {
     console.log(event);
