@@ -8,7 +8,7 @@
       <mat-panel-title><mat-icon>search</mat-icon><span class="nav-caption">Client View</span>
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <div (click)="onSelect(bp)" *ngFor="let bp of bps" (click)="onSidenavClose()">
+    <div (click)="onSelect(bp.id, 0)" *ngFor="let bp of bps" (click)="onSidenavClose()">
       <a routerLink="/clientview" class="submenu"  mat-menu-item><mat-icon>person</mat-icon><span class="nav-caption">{{ bp.name }}</span></a>
     </div>
   </mat-expansion-panel>

@@ -9,19 +9,29 @@ export class BPdetailsService {
   getBPs() {
     return [
       {
-        id: 1,
-        name: 'Mike',
-        balance: 100
+        id: 455674,
+        name: 'Frascati Joela',
+        balance: 200000
       },
       {
-        id: 2,
-        name: 'Sarah',
-        balance: 200
+        id: 455680,
+        name: 'Lutz Maja',
+        balance: 300000
       },
       {
-        id: 3,
-        name: 'Riley',
-        balance: 300
+        id: 455677,
+        name: 'Lutz Miriam',
+        balance: 100000
+      },
+      {
+        id: 455666,
+        name: 'Mueller Deborah',
+        balance: 200000
+      },
+      {
+        id: 455676,
+        name: 'Strässler Roland',
+        balance: 200000
       }
     ];
   }

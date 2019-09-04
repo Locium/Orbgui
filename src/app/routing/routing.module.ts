@@ -12,10 +12,22 @@ const routes: Routes = [
   { path: 'groupview', component: GroupviewComponent},
   { path: 'clientview', component: ClientviewComponent},
   { path: 'clientview/:id', component: ClientviewComponent},
+  { path: 'clientview/:id/:viewId', component: ClientviewComponent,
+  children: [
+  {
+    path: 'cltaa',
+    component: CltAAComponent
+  },
+    {
+      path: 'cltpos',
+      component: CltPosComponent
+    },
+    {
+      path: 'cltoverview',
+      component: CltOverviewComponent
+    }]},
   { path: 'todos', component: TodosComponent},
-  { path: 'cltaa', component: CltAAComponent},
-  { path: 'cltoverview', component: CltOverviewComponent},
-  { path: 'cltpos', component: CltPosComponent},
+
   { path: '', redirectTo: '/groupview', pathMatch: 'full'}
 ];
 

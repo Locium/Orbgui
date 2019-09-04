@@ -48,8 +48,8 @@ export class HeaderComponent implements OnInit {
     this.sidenavToggle.emit();
   }
 
-  onSelect(bp) {
-    this.router.navigate(['/clientview', bp.id]);
+  onSelect(bpId: number, viewId: number) {
+    this.router.navigate(['/clientview', bpId , viewId]);
   }
 
 }

@@ -36,10 +36,13 @@ export class ClientviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // tslint:disable-next-line:radix
+    this.activeLinkIndex = parseInt(this.router.snapshot.paramMap.get('viewId'));
     this.navrouter.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.navrouter.url));
     });
 
+    // tslint:disable-next-line:radix
     const id = parseInt(this.router.snapshot.paramMap.get('id'));
     this.bpId = id;
     this.dataService.get_bp_info(this.bpId).subscribe((res: any[]) => {

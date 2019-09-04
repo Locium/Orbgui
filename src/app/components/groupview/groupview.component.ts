@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BP} from '../../models/BP';
 import {BPdetailsService} from '../../services/bpdetails.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-groupview',
@@ -11,7 +12,7 @@ export class GroupviewComponent implements OnInit {
 
   bpList: BP[];
 
-  constructor(private bpdetailsService: BPdetailsService) {
+  constructor(private bpdetailsService: BPdetailsService, private router: Router) {
   }
 
   ngOnInit() {
@@ -20,5 +21,9 @@ export class GroupviewComponent implements OnInit {
 
   public executeSelectedChange = (event) => {
     console.log(event);
+  }
+
+  onSelect(bpId: number, viewId: number) {
+    this.router.navigate(['/clientview/', bpId , viewId]);
   }
 }
