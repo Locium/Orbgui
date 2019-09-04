@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.bps = [
@@ -47,9 +47,4 @@ export class HeaderComponent implements OnInit {
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
   }
-
-  onSelect(bpId: number, viewId: number) {
-    this.router.navigate(['/clientview', bpId , viewId]);
-  }
-
 }

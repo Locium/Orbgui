@@ -14,7 +14,7 @@
       </li>
       <li>
         <mat-menu #appMenu="matMenu">
-          <div (click)="onSelect(bp.id, 0)" *ngFor="let bp of bps">
+          <div [routerLink]="['/clientview/', bp.id, 'cltoverview']" *ngFor="let bp of bps">
             <a class="submenu" mat-menu-item>{{ bp.name }}</a>
           </div>
         </mat-menu>

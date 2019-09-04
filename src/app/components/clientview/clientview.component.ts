@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../data.service';
 import {ActivatedRoute} from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -37,7 +36,6 @@ export class ClientviewComponent implements OnInit {
 
   ngOnInit(): void {
     // tslint:disable-next-line:radix
-    this.activeLinkIndex = parseInt(this.router.snapshot.paramMap.get('viewId'));
     this.navrouter.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.navrouter.url));
     });

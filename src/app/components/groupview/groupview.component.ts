@@ -12,7 +12,7 @@ export class GroupviewComponent implements OnInit {
 
   bpList: BP[];
 
-  constructor(private bpdetailsService: BPdetailsService, private router: Router) {
+  constructor(private bpdetailsService: BPdetailsService) {
   }
 
   ngOnInit() {
@@ -21,9 +21,5 @@ export class GroupviewComponent implements OnInit {
 
   public executeSelectedChange = (event) => {
     console.log(event);
-  }
-
-  onSelect(bpId: number, viewId: number) {
-    this.router.navigate(['/clientview/', bpId , viewId]);
   }
 }

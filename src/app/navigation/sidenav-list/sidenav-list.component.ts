@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class SidenavListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
   bps: BP[];
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.bps = [
@@ -35,9 +35,4 @@ export class SidenavListComponent implements OnInit {
   public onSidenavClose = () => {
     this.sidenavClose.emit();
   }
-
-  onSelect(bpId: number, viewId: number) {
-    this.router.navigate(['/clientview', bpId , viewId]);
-  }
-
 }

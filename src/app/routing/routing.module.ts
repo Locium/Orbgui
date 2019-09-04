@@ -11,8 +11,7 @@ import {CltPosComponent} from '../components/clientview/clt-pos/clt-pos.componen
 const routes: Routes = [
   { path: 'groupview', component: GroupviewComponent},
   { path: 'clientview', component: ClientviewComponent},
-  { path: 'clientview/:id', component: ClientviewComponent},
-  { path: 'clientview/:id/:viewId', component: ClientviewComponent,
+  { path: 'clientview/:id', component: ClientviewComponent,
   children: [
   {
     path: 'cltaa',
@@ -27,7 +26,6 @@ const routes: Routes = [
       component: CltOverviewComponent
     }]},
   { path: 'todos', component: TodosComponent},
-
   { path: '', redirectTo: '/groupview', pathMatch: 'full'}
 ];
 
