@@ -5,12 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl = 'http://localhost:8080/com.orbium/waw115/bp';
+  baseUrl = 'http://localhost:8080/com.orbium/waw115';
 
   constructor(private httpClient: HttpClient) {}
 
-  get_lum(bpId: BigInteger) {
-    return this.httpClient.get(this.baseUrl + '/id?obj_id=' + bpId);
+  get_bp_info(bpId: BigInteger) {
+    return this.httpClient.get(this.baseUrl + '/bp/id?obj_id=' + bpId);
   }
+
+  get_bp_assets(bpId: BigInteger){
+    return this.httpClient.get(this.baseUrl + '/cont/pos/list?bp_id=' + bpId);
+}
 
 }
