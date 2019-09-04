@@ -10,6 +10,7 @@ import {PosListService} from '../../../services/pos-list.service';
 export class CltPosComponent implements OnInit {
 
   posList: Array<Pos> = [];
+  posListtest: Array<any> = [];
   bp_id = 455674;
 
   constructor(private posListService: PosListService) { }
@@ -18,6 +19,8 @@ export class CltPosComponent implements OnInit {
     this.posListService.getPos(this.bp_id).subscribe(pos => {
       this.posList.push(pos);
       console.log(pos.pfm_type);
+
+      this.posListtest = this.posListService.getPossim();
     });
   }
 
