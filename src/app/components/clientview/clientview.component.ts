@@ -9,8 +9,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 
 export class ClientviewComponent implements OnInit {
-  public bp  = [];
   public bpId: number;
+  public bp  = [];
+  public bpAssets = [];
+
 
   // private productsObservable : Observable<any[]> ;
 
@@ -21,10 +23,16 @@ export class ClientviewComponent implements OnInit {
   // tslint:disable-next-line:radix
   const id = parseInt(this.router.snapshot.paramMap.get('id'));
   this.bpId = id;
-  this.dataService.get_lum(this.bpId).subscribe((res: any[]) => {
+  this.dataService.get_bp_info(this.bpId).subscribe((res: any[]) => {
       this.bp = res;
       console.log(res);
     });
+
+    this.dataService.get_bp_assets(this.bpId).subscribe((res: any[]) => {
+      this.bpAssets = res;
+      console.log(res);
+    });
+
 }
 
   public executeSelectedChange = (event) => {

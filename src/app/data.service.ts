@@ -9,8 +9,12 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) {}
 
-  get_lum(bpId: number) {
-    return this.httpClient.get(this.baseUrl + '/id?obj_id=' + bpId);
+  get_bp_info(bpId: number) {
+    return this.httpClient.get(this.baseUrl + '/bp/id?obj_id=' + bpId);
   }
+
+  get_bp_assets(bpId: number){
+    return this.httpClient.get(this.baseUrl + '/cont/pos/list?bp_id=' + bpId);
+}
 
 }
