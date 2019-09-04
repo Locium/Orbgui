@@ -17,19 +17,29 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.bps = [
       {
-        id: 455677,
-        name: 'Mirjam Lutz',
-        balance: 100000
-      },
-      {
-        id: 2,
-        name: 'Franz Josef',
+        id: 455674,
+        name: 'Frascati Joela',
         balance: 200000
       },
       {
-        id: 3,
-        name: 'Natalia Ndau',
+        id: 455680,
+        name: 'Lutz Maja',
         balance: 300000
+      },
+      {
+        id: 455677,
+        name: 'Lutz Miriam',
+        balance: 100000
+      },
+      {
+        id: 455666,
+        name: 'Mueller Deborah',
+        balance: 200000
+      },
+      {
+        id: 455676,
+        name: 'Strässler Roland',
+        balance: 200000
       }
     ];
   }

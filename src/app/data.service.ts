@@ -9,7 +9,7 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) {}
 
-  get_lum(bpId: BigInteger) {
+  get_lum(bpId: number) {
     return this.httpClient.get(this.baseUrl + '/id?obj_id=' + bpId);
   }
 

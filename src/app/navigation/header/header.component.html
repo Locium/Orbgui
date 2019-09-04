@@ -13,7 +13,6 @@
         <a routerLink="/groupview">Group View</a>
       </li>
       <li>
-
         <mat-menu #appMenu="matMenu">
           <div (click)="onSelect(bp)" *ngFor="let bp of bps">
             <a routerLink="/clientview" class="submenu" mat-menu-item>{{ bp.name }}</a>
