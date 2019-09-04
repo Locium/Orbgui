@@ -5,6 +5,38 @@
   <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
     <mat-tab label="Overview">
       <p>We are going to use different material components to create nice looking angular app.</p>
+
+      <div fxFlex fxLayout="column" fxLayoutGap="10px" style="height:100vh">
+        <div fxLayout="row wrap">
+
+          <!-- loop over the cardList and show the cards -->
+          <div
+            *ngFor="let bp of bpList"
+            fxFlex="25"
+            fxFlex.md="33"
+            fxFlex.sm="50"
+            fxFlex.xs="100"
+            fxLayout="column"
+            style="padding: 5px;"
+          >
+            <!-- cards here -->
+            <mat-card class="mat-elevation-z1">
+
+              <mat-card-title> {{ bp.name }} </mat-card-title>
+              <mat-card-content> <div>{{bp.id}}</div>
+                <div>{{bp.balance}}</div></mat-card-content>
+              <mat-card-footer>
+                <button fxFlex mat-flat-button color="primary" routerLink="/clientview">
+                  Show Positions
+                </button>
+              </mat-card-footer>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Performance">
+      <p>We will consume our .NET Core application. Basically, we will create complete CRUD client app.</p>
       <mat-grid-list cols = "2" rowHeight="fit" style="height: 350px">
         <mat-grid-tile>
           <!--<mat-card fxLayoutWrap="wrap" fxLayout="column" fxFlex="95%" fxLayoutGap="16px">
@@ -31,10 +63,6 @@
         <mat-grid-tile>Tile 4</mat-grid-tile>
 
       </mat-grid-list>
-
-    </mat-tab>
-    <mat-tab label="Performance">
-      <p>We will consume our .NET Core application. Basically, we will create complete CRUD client app.</p>
     </mat-tab>
     <mat-tab label="Documents">
       <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>

@@ -15,6 +15,10 @@ import { TodosComponent } from './components/todos/todos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { ChartsModule } from 'ng2-charts';
 import { AssetAllocationChartComponent } from './components/asset-allocation-chart/asset-allocation-chart.component';
+import { CardComponent } from './components/card/card.component';
+import { CltOverviewComponent } from './components/clientview/clt-overview/clt-overview.component';
+import { CltAAComponent } from './components/clientview/clt-aa/clt-aa.component';
+import { CltPosComponent } from './components/clientview/clt-pos/clt-pos.component';
 import { AssetAllocationBubbleChartComponent } from './components/asset-allocation-bubble-chart/asset-allocation-bubble-chart.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -52,6 +56,10 @@ FusionChartsModule.fcRoot(
     TodosComponent,
     TodoItemComponent,
     AssetAllocationChartComponent,
+    CardComponent,
+    CltOverviewComponent,
+    CltAAComponent,
+    CltPosComponent,
     AssetAllocationBubbleChartComponent
   ],
   imports: [

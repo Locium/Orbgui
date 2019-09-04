@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BP} from '../../models/BP';
+import {BPdetailsService} from '../../services/bpdetails.service';
 
 @Component({
   selector: 'app-groupview',
@@ -10,26 +11,11 @@ export class GroupviewComponent implements OnInit {
 
   bpList: BP[];
 
-  constructor() { }
+  constructor(private bpdetailsService: BPdetailsService) {
+  }
 
   ngOnInit() {
-    this.bpList = [
-      {
-        id: 1,
-        name: 'Mike',
-        balance: 100
-      },
-      {
-        id: 2,
-        name: 'Sarah',
-        balance: 200
-      },
-      {
-        id: 3,
-        name: 'Riley',
-        balance: 300
-      }
-    ];
+    this.bpList = this.bpdetailsService.getBPs();
   }
 
   public executeSelectedChange = (event) => {
