@@ -30,7 +30,7 @@ export class ClientviewComponent implements OnInit {
         label: 'Client Positions',
         link: './cltpos',
         index: 2
-      },
+      }
     ];
   }
 

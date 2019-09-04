@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BPlist } from './bpdetails.service';
+import { BPlistService } from './bplist.service';
 
-describe('BPdetailsService', () => {
+describe('BPlistService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BPlist = TestBed.get(BPlist);
+    const service: BPlistService = TestBed.get(BPlistService);
     expect(service).toBeTruthy();
   });
 });

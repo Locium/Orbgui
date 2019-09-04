@@ -1,38 +1,25 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { BPdetails } from '../models/BPdetails';
+import {Observable} from 'rxjs';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    }
+
+  )
+};
 @Injectable({
   providedIn: 'root'
 })
 export class BPdetailsService {
+  bpdetailsendp = 'http://localhost:8080/com.orbium/waw115/bp/id?obj_id=';
+  // http://localhost:8080/com.orbium/waw115/bp/id?obj_id=455677
 
-  constructor() { }
-  getBPs() {
-    return [
-      {
-        id: 455674,
-        name: 'Frascati Joela',
-        balance: 200000
-      },
-      {
-        id: 455680,
-        name: 'Lutz Maja',
-        balance: 300000
-      },
-      {
-        id: 455677,
-        name: 'Lutz Miriam',
-        balance: 100000
-      },
-      {
-        id: 455666,
-        name: 'Mueller Deborah',
-        balance: 200000
-      },
-      {
-        id: 455676,
-        name: 'Strässler Roland',
-        balance: 200000
-      }
-    ];
+  constructor(private http: HttpClient) { }
+
+  getBpDetails(id: number): Observable<BPdetails[]> {
+    return this.http.get<BPdetails[]>(`${this.bpdetailsendp}${id}`);
   }
 }
