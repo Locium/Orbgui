@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Observable } from 'rxjs';
-import { ClientviewComponent } from "./components/clientview/clientview.component";
+import { ClientviewComponent } from './components/clientview/clientview.component';
 import { DataService } from './data.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { DataService } from './data.service';
 
 
 
-export class AppComponent{
+export class AppComponent {
 
 
 
