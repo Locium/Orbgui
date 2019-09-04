@@ -1,12 +1,14 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+
     "prefer-const": false,
     "variable-name": [
       true,
       "ban-keywords",
       "check-format",
-      "allow-leading-underscore"
+      "allow-leading-underscore",
+      "allow-snake-case"
     ],
     "array-type": false,
     "arrow-parens": false,

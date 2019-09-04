@@ -4,6 +4,8 @@ import {BPdetails} from '../../models/BPdetails';
 import {Router} from '@angular/router';
 import {BPlistService} from '../../services/bplist.service';
 import {BPdetailsService} from '../../services/bpdetails.service';
+import {Observable} from 'rxjs';
+import {CltPosComponent} from '../clientview/clt-pos/clt-pos.component';
 
 
 @Component({
@@ -14,24 +16,26 @@ import {BPdetailsService} from '../../services/bpdetails.service';
 export class GroupviewComponent implements OnInit {
 
   bpList: BP[];
-  bpDetailsList: BPdetails[];
+  bpDetailsList: Array<BPdetails> = [];
 
-
-
-  constructor(private bpListService: BPlistService, private bpDetailsService: BPdetailsService, private router: Router) {
+ constructor(private bpListService: BPlistService, private bpDetailsService: BPdetailsService, private router: Router) {
   }
 
   ngOnInit() {
     this.bpList = this.bpListService.getBPs();
-
-
-
-    this.bpDetailsService.getBpDetails(455677).subscribe(bpDetails => {
-      this.bpDetailsList = bpDetails;
+    this.bpList.forEach((bp) => {
+      console.log(bp.id);
+      this.bpDetailsService.getBpDetails(bp.id).subscribe( bpdetail => {
+        this.bpDetailsList.push(bpdetail);
+      });
     });
-  }
+
+ }
 
   public executeSelectedChange = (event) => {
     console.log(event);
+  }
+
+  showPos(id: number) {
   }
 }

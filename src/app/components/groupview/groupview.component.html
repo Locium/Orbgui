@@ -11,7 +11,7 @@
 
           <!-- loop over the cardList and show the cards -->
           <div
-            *ngFor="let bp of bpList"
+            *ngFor="let bpdetails of bpDetailsList"
             fxFlex="25"
             fxFlex.md="33"
             fxFlex.sm="50"
@@ -22,11 +22,15 @@
             <!-- cards here -->
             <mat-card class="mat-elevation-z1">
 
-              <mat-card-title> {{ bp.name }} </mat-card-title>
-              <mat-card-content> <div>{{bp.id}}</div>
-                <div>{{bp.balance}}</div></mat-card-content>
+              <mat-card-title> {{ bpdetails.name }} {{bpdetails.name_abbr}}</mat-card-title>
+              <mat-card-content>
+                <div>{{bpdetails.id}}</div>
+                <div>{{bpdetails.birthdate}}</div>
+                <div>{{bpdetails.domi_country}}</div>
+                <div>{{bpdetails.language}}</div>
+              </mat-card-content>
               <mat-card-footer>
-                <button [routerLink]="['/clientview/', bp.id, 'cltpos']" fxFlex mat-flat-button color="primary">
+                <button (click)="showPos(bpdetails.id)" [routerLink]="['/clientview/', bpdetails.id, 'cltpos']" fxFlex mat-flat-button color="primary">
                   Show Positions
                 </button>
               </mat-card-footer>
@@ -66,6 +70,7 @@
     </mat-tab>
     <mat-tab label="Documents">
       <p>By using material components, we are going to create fully responsive navigation menu, with its side-bar as well.</p>
+
     </mat-tab>
   </mat-tab-group>
 </section>

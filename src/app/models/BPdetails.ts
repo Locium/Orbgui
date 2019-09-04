@@ -4,7 +4,6 @@ export class BPdetails {
   name_abbr: string;
   name: string;
   birthdate: string;
-  domicountry: string;
+  domi_country: string;
   language: string;
-  balance: number;
 }

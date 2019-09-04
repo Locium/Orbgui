@@ -19,7 +19,7 @@ export class BPdetailsService {
 
   constructor(private http: HttpClient) { }
 
-  getBpDetails(id: number): Observable<BPdetails[]> {
-    return this.http.get<BPdetails[]>(`${this.bpdetailsendp}${id}`);
+  getBpDetails(id: number): Observable<BPdetails> {
+    return this.http.get<BPdetails>(`${this.bpdetailsendp}${id}`);
   }
 }

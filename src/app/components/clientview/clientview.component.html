@@ -1,8 +1,10 @@
 <section fxLayout="column" fxFlexAlign="stretch">
   <div fxFlexAlign="center">
-    <p>Overview of {{bp.name}}</p>
+    <p>Overview</p>
   </div>
-  <nav mat-tab-nav-bar>
+
+
+  <nav mat-tab-nav-bar >
     <a mat-tab-link
        *ngFor="let link of navLinks"
        [routerLink]="link.link"
@@ -12,5 +14,7 @@
     </a>
   </nav>
   <router-outlet></router-outlet>
+</section>
+  <!--
   <app-asset-allocation-chart></app-asset-allocation-chart>
-<app-asset-allocation-bubble-chart></app-asset-allocation-bubble-chart>
+<app-asset-allocation-bubble-chart></app-asset-allocation-bubble-chart>-->
