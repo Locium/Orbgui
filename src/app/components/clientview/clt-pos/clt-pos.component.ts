@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pos} from '../../../models/Pos';
 import {PosListService} from '../../../services/pos-list.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-clt-pos',
@@ -9,19 +10,32 @@ import {PosListService} from '../../../services/pos-list.service';
 })
 export class CltPosComponent implements OnInit {
 
-  posList: Array<Pos> = [];
+  posList: Pos[];
   posListtest: Array<any> = [];
-  bp_id = 455674;
+  bpId: number;
 
-  constructor(private posListService: PosListService) { }
+  constructor(private posListService: PosListService,  private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.posListService.getPos(this.bp_id).subscribe(pos => {
-      this.posList.push(pos);
-      console.log(pos.pfm_type);
-
-      this.posListtest = this.posListService.getPossim();
+    this.router.params.subscribe(params => {
+      let id = this.router.parent.snapshot.params.id;
+      this.bpId = id;
+      console.log(id);
     });
+
+    this.posListService.getPos(this.bpId).subscribe(positionList => {
+      this.posList = positionList;
+      this.posList.forEach((pos) => {
+          console.log(pos.pos_id);
+        });
+      // console.log(pos);
+      // this.posListtest = this.posListService.getPossim();
+    });
+
+    /*this.posList = this.posListService.getPos(this.bp_id);
+    this.posList.forEach((pos) => {
+      console.log(pos.pos_id);
+    });*/
   }
 
 }

@@ -4,7 +4,6 @@
   </div>
   <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
     <mat-tab label="Overview">
-      <p>We are going to use different material components to create nice looking angular app.</p>
 
       <div fxFlex fxLayout="column" fxLayoutGap="10px" style="height:100vh">
         <div fxLayout="row wrap">
@@ -22,12 +21,13 @@
             <!-- cards here -->
             <mat-card class="mat-elevation-z1">
 
-              <mat-card-title> {{ bpdetails.name }} {{bpdetails.name_abbr}}</mat-card-title>
+              <mat-card-title> {{ bpdetails.name }} </mat-card-title>
               <mat-card-content>
-                <div>{{bpdetails.id}}</div>
-                <div>{{bpdetails.birthdate}}</div>
-                <div>{{bpdetails.domi_country}}</div>
-                <div>{{bpdetails.language}}</div>
+                <div>Key: {{bpdetails.name_abbr}}</div>
+                <div>ID: {{bpdetails.id}}</div>
+                <div>Birthdate: {{bpdetails.birthdate}}</div>
+                <div>Domi Country: {{bpdetails.domi_country.name}}</div>
+                <div>Language: {{bpdetails.language}}</div>
               </mat-card-content>
               <mat-card-footer>
                 <button (click)="showPos(bpdetails.id)" [routerLink]="['/clientview/', bpdetails.id, 'cltpos']" fxFlex mat-flat-button color="primary">

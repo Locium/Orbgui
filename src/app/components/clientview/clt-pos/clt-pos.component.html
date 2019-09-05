@@ -1,7 +1,19 @@
 <p>clt-pos works!</p>
+
 <mat-list >
-  <mat-list-item *ngFor="let pos of posListtest">
-    <div>{{pos.pos_id}}</div>
+  <mat-list-item *ngFor="let pos of posList">
+
+    <tr>
+      <td>{{pos.pos_id}}</td>
+      <td>{{pos.amount}}</td>
+      <td>{{pos.asset.name}}</td>
+      <td></td>
+      <td>{{pos.pfm_type}}</td>
+      <td>{{pos.price}}</td>
+      <td>{{pos.val_asset}}</td>
+    </tr>
+
+    <div>pos: {{pos.pos_id}}</div>
     <div>{{pos.pos_id}} {{pos.amount}} {{pos.pfm_type}}</div>
   </mat-list-item>
 
@@ -9,3 +21,4 @@
 
   </mat-list-item>
 </mat-list>
+

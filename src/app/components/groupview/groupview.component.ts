@@ -24,7 +24,6 @@ export class GroupviewComponent implements OnInit {
   ngOnInit() {
     this.bpList = this.bpListService.getBPs();
     this.bpList.forEach((bp) => {
-      console.log(bp.id);
       this.bpDetailsService.getBpDetails(bp.id).subscribe( bpdetail => {
         this.bpDetailsList.push(bpdetail);
       });

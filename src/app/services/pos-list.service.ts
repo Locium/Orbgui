@@ -11,8 +11,8 @@ export class PosListService {
 
   constructor(private http: HttpClient) {}
 
-  getPos(bpId: number): Observable<Pos> {
-    return this.http.get<Pos>(`${this.posEndpoint}${bpId}`);
+  getPos(bpId: number): Observable<any[]> {
+    return this.http.get<any>(`${this.posEndpoint}${bpId}`);
   }
 
   getPossim() {
