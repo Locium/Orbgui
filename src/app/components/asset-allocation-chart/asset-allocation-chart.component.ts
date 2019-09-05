@@ -7,6 +7,8 @@ import {Observable} from "rxjs";
 // This will allow you to load `.json` files from disk
 
 import * as dataAssetAllocation from '../../data/assetAllocationData/assetAllocationData.json';
+import {ActivatedRoute, Router} from "@angular/router";
+import {DataService} from "../../data.service";
 
 
 
@@ -34,21 +36,51 @@ export class AssetAllocationChartComponent implements OnInit {
   public assetAllocationLabels = ['cash' , 'equity' , 'real estate' , 'commodities'];
   public assetAllocationType = 'doughnut';
   public assetAllocationLegend = false;
+  public bpId;
+  public bpAssetAllocation;
+  public bpAssetAllocationCash;
+  public bpAssetAllocationCommodities;
+  public bpAssetAllocationOtherAssets;
+  public bpAssetAllocationEquity;
+
   // @ts-ignore
-  public assetAllocationData = [
-    {data: [dataAssetAllocation.assets.cash, dataAssetAllocation.assets.equity, dataAssetAllocation.assets["real estate"], dataAssetAllocation.assets.commodities]},
-     //{data:  data},
-  ];
+  public assetAllocationData = [];
 
 
+    //= [
+    //{data: [dataAssetAllocation.assets.cash, dataAssetAllocation.assets.equity, dataAssetAllocation.assets["other assets"], dataAssetAllocation.assets.commodities]},
+    //{data:  [282361.74, 282361.74, 447705, 45546]},
+   // {data:  [this.bpAssetAllocationCash, this.bpAssetAllocationEquity, this.bpAssetAllocationOtherAssets, this.bpAssetAllocationCommodities]},
+  //];
 
-  //constructor() {
-  //  console.log(dataAssetAllocation.assets.cash, dataAssetAllocation.assets.equity, dataAssetAllocation.assets["real estate"], dataAssetAllocation.assets.commodities)
-  //}
+  constructor(private navrouter: Router, private dataService: DataService, private router: ActivatedRoute) {
 
-
+  }
 
   ngOnInit() {
+
+
+    this.router.params.subscribe(params => {
+      let id = this.router.parent.snapshot.params.id;
+      this.bpId = id;
+      console.log(id);
+    });
+
+
+
+    this.dataService.get_bp_asset_allocation(this.bpId).subscribe((res: any[]) => {
+      this.bpAssetAllocation = res;
+      console.log(res);
+      this.assetAllocationData = [{
+        data:  [this.bpAssetAllocation[2].value,
+                this.bpAssetAllocation[4].value,
+                this.bpAssetAllocation[3].value,
+                this.bpAssetAllocation[1].value
+               ]
+      }];
+    });
+
+
 
   }
 
