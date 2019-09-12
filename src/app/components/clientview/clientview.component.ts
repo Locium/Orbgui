@@ -13,6 +13,8 @@ export class ClientviewComponent implements OnInit {
   public bpId: number;
   public bp  = [];
   public bpAssets = [];
+  public bpAssetAllocation;
+  public assetAllocationData;
 
   navLinks: any[];
   activeLinkIndex = -1;
@@ -43,6 +45,7 @@ export class ClientviewComponent implements OnInit {
     // tslint:disable-next-line:radix
     const id = parseInt(this.router.snapshot.paramMap.get('id'));
     this.bpId = id;
+
     this.dataService.get_bp_info(this.bpId).subscribe((res: any[]) => {
       this.bp = res;
       console.log(res);
@@ -52,7 +55,17 @@ export class ClientviewComponent implements OnInit {
       this.bpAssets = res;
       console.log(res);
     });
+
+    this.dataService.get_bp_asset_allocation(this.bpId).subscribe((res: any[]) => {
+    this.bpAssetAllocation = res;
+    console.log(res);
+
+    });
+
   }
+
+
+
 
   public executeSelectedChange = (event) => {
     console.log(event);

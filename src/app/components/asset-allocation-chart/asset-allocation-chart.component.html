@@ -1,21 +1,5 @@
-
-
 <div>
-  <div style="display: block">
-    <canvas baseChart
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType"></canvas>
-  </div>
-</div>
-
-
-
-
-<div>
-  <div style="display: block">
+  <div style="display: block"  *ngIf="assetAllocationData">
     <canvas baseChart
             [datasets]="assetAllocationData"
             [labels]="assetAllocationLabels"
@@ -23,16 +7,4 @@
             [legend]="assetAllocationLegend"
             [chartType]="assetAllocationType"></canvas>
   </div>
-</div>
-
-<div>
-
-  <p>{{bpAssetAllocation[0].pfm_type}}: {{bpAssetAllocation[0].value}}</p>
-  <p>{{bpAssetAllocation[1].pfm_type}}: {{bpAssetAllocation[1].value}}</p>
-  <p>{{bpAssetAllocation[2].pfm_type}}: {{bpAssetAllocation[2].value}}</p>
-  <p>{{bpAssetAllocation[3].pfm_type}}: {{bpAssetAllocation[3].value}}</p>
-  <p>{{bpAssetAllocation[4].pfm_type}}: {{bpAssetAllocation[4].value}}</p>
-
-  <p>{{bpAssetAllocationEquity}}</p>
-
 </div>
